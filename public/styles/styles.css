@@ -196,3 +196,24 @@ ul {
 li {
     margin-bottom: 10px;
 }
+
+/* delete button for post*/
+
+.delete-button{
+    width: 100%;
+    border: 2px dashed black;
+    background-color: transparent;
+    padding: 10px;
+    box-shadow: 0 0 black;
+    transition: transform 0.2s ease, color 0.2s, box-shadow 0.2s, border-radius 0.2s, border-color 0.2s, border 0.2s, background-color 0.2s;
+}
+
+.delete-button:hover{
+    transform: translate(-3px, -3px);
+    border-radius: 2px solid red;
+    border-color: red;
+    box-shadow: 2px 2px red;
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+}

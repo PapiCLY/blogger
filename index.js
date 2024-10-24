@@ -42,7 +42,7 @@ app.get('/blogs', (req,res)=>{
 
 app.post('/delete', (req,res)=>{
     const postIndex = req.body.index
-
+    
     if(postIndex >= 0 && postIndex < blogPosts.length){
         blogPosts.splice(postIndex, 1)
     }
