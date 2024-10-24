@@ -39,6 +39,18 @@ app.get('/blogs', (req,res)=>{
     res.render('blogs.ejs', {posts: blogPosts})
 })
 
+
+app.post('/delete', (req,res)=>{
+    const postIndex = req.body.index
+
+    if(postIndex >= 0 && postIndex < blogPosts.length){
+        blogPosts.splice(postIndex, 1)
+    }
+
+    res.render('blogs.ejs', {posts: blogPosts })
+})
+
+
 app.listen(PORT, ()=>{
     console.log(`Server is running on port: ${PORT}`)
 })

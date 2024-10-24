@@ -18,6 +18,12 @@
                     <li>Thoughts: <%= post.bloggerPost %></li>
                     <li><%= post.timeStamp %></li>
                 </ul>
+
+                <form action="/delete" method="POST">
+                    <!-- Hidden input to pass the index or ID of the post -->
+                    <input type="hidden" name="index" value="<%= post.index %>">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
             </div>
             <% }) %>
     </div>
