@@ -42,7 +42,7 @@ app.get('/blogs', (req,res)=>{
 
 app.post('/delete', (req,res)=>{
     const postIndex = req.body.index
-    
+
     if(postIndex >= 0 && postIndex < blogPosts.length){
         blogPosts.splice(postIndex, 1)
     }
@@ -50,6 +50,17 @@ app.post('/delete', (req,res)=>{
     res.render('blogs.ejs', {posts: blogPosts })
 })
 
+app.get('/edit/:index', (req,res)=>{
+    const postIndex = req.params.index;
+    const post = blogPosts[postIndex];
+
+    if(post){
+        //render the edit form with the current post data
+        res.render('edit.ejs', { post, index: postIndex })
+    }else{
+        res.status(404).send('post not found')
+    }
+});
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port: ${PORT}`)
