@@ -20,13 +20,15 @@ app.get('/about', (req,res)=>{
 })
 
 app.post('/submit', (req,res)=>{
+    const now = new Date()
+    const readableDateTime = now.toLocaleString();
     const data = {
         bloggerName: req.body['bloggerName'],
         postTitle: req.body['title'],
-        bloggerPost: req.body['blogPost']
+        bloggerPost: req.body['blogPost'],
+        timeStamp: readableDateTime
     }
     res.render('blogs.ejs', data)
-    console.log(req.body['bloggerName'])
 })
 
 app.listen(PORT, ()=>{

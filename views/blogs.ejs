@@ -9,7 +9,11 @@
   </form>
 
   <div class="blog-grid">
-
-    
+    <ul>
+        <li>Blogger: <%= bloggerName %></li>
+        <li>Title: <%= postTitle %></li>
+        <li>Thoughts: <%= bloggerPost %></li>
+        <li><%= timeStamp %></li>
+    </ul>
   </div>
 <%- include('partials/footer.ejs') %>
