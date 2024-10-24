@@ -41,6 +41,10 @@ header {
     border-radius: 1px;
     transition: transform 0.2s ease, box-shadow 0.2s, border 0.2s, background-color 0.2s;
     box-shadow: 0 0 0 black;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Teko", sans-serif;
+    font-size: larger;
 }
 .button:hover {
     transform: translate(-3px, -3px);
