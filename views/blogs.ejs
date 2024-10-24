@@ -1,3 +1,15 @@
 <%- include('partials/header.ejs') %>
+<h3>Create a new blog post, already!</h3>
 
+<form action="/submit" method="POST">
+    <input name="bloggerName" type="text" class="feedback-input" placeholder="Enter Name" />
+    <input name="title" type="text" class="feedback-input" placeholder="Enter Blog Title" />
+    <textarea name="blogPost" class="feedback-input" placeholder="Post your thoughts"></textarea>
+    <input type="submit" value="SUBMIT" />
+  </form>
+
+  <div class="blog-grid">
+
+    
+  </div>
 <%- include('partials/footer.ejs') %>

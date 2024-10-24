@@ -19,6 +19,16 @@ app.get('/about', (req,res)=>{
     res.render('about.ejs')
 })
 
+app.post('/submit', (req,res)=>{
+    const data = {
+        bloggerName: req.body['bloggerName'],
+        postTitle: req.body['title'],
+        bloggerPost: req.body['blogPost']
+    }
+    res.render('blogs.ejs', data)
+    console.log(req.body['bloggerName'])
+})
+
 app.listen(PORT, ()=>{
     console.log(`Server is running on port: ${PORT}`)
 })
