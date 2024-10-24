@@ -8,15 +8,18 @@
     <input type="submit" value="SUBMIT" />
   </form>
 
-  <div class="blog-grid">
-    <ul>
+<div class="blog-grid">
+    <div class="grid-container">
         <% posts.forEach(function(post){ %>
-            <li>Blogger: <%= post.bloggerName %></li>
-            <li>Title: <%= post.postTitle %></li>
-            <li>Thoughts: <%= post.bloggerPost %></li>
-            <li><%= post.timeStamp %></li>
-            <hr>
-       <% }) %>
-    </ul>
-  </div>
+            <div class="grid-item">
+                <ul>
+                    <li>Blogger: <%= post.bloggerName %></li>
+                    <li>Title: <%= post.postTitle %></li>
+                    <li>Thoughts: <%= post.bloggerPost %></li>
+                    <li><%= post.timeStamp %></li>
+                </ul>
+            </div>
+            <% }) %>
+    </div>
+</div>
 <%- include('partials/footer.ejs') %>

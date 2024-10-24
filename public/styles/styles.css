@@ -158,3 +158,31 @@ footer {
 }
 
 /*Blog CSS*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #f8f8f8;
+    border: 2px dashed #1b1b1b;
+    padding: 20px;
+    box-shadow: 5px 5px 0 black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; 
+    overflow: hidden; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
