@@ -11,19 +11,17 @@ app.get('/', (req,res)=>{
     res.render('index.ejs')
 })
 
-app.get('/blogs', (req,res)=>{
-    res.render('blogs.ejs', {posts: blogPosts})
-})
 
 app.get('/about', (req,res)=>{
     res.render('about.ejs')
 })
 
-let blogPosts = []
+let blogPosts = [];
 
 app.post('/submit', (req,res)=>{
     const now = new Date()
     const readableDateTime = now.toLocaleString();
+
     const newPost = {
         bloggerName: req.body['bloggerName'],
         postTitle: req.body['title'],
@@ -32,9 +30,13 @@ app.post('/submit', (req,res)=>{
     }
 
     blogPosts.push(newPost)
-    res.render('blogs.ejs', newPost)
+
 
     res.render('blogs.ejs', {posts:blogPosts})
+})
+
+app.get('/blogs', (req,res)=>{
+    res.render('blogs.ejs', {posts: blogPosts})
 })
 
 app.listen(PORT, ()=>{

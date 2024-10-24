@@ -11,10 +11,10 @@
   <div class="blog-grid">
     <ul>
         <% posts.forEach(function(post){ %>
-            <li>Blogger: <%= bloggerName %></li>
-            <li>Title: <%= postTitle %></li>
-            <li>Thoughts: <%= bloggerPost %></li>
-            <li><%= timeStamp %></li>
+            <li>Blogger: <%= post.bloggerName %></li>
+            <li>Title: <%= post.postTitle %></li>
+            <li>Thoughts: <%= post.bloggerPost %></li>
+            <li><%= post.timeStamp %></li>
             <hr>
        <% }) %>
     </ul>
