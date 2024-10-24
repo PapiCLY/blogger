@@ -18,13 +18,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px;
     background-color: #f8f8f8;
     border-bottom: 5px dashed #1b1b1b;
+    padding-right: 100px;
+    padding-left: 100px;
 }
 .logo {
     height: 50px; /* Adjust as needed */
 }
+
+
 .button {
     margin-left: 15px;
     padding: 10px 15px;
