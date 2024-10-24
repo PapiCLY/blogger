@@ -13,8 +13,8 @@
 
 body {
     display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -53,25 +53,25 @@ header {
     flex: 1; 
     display: flex;
     justify-content: center; 
-    margin-top: 150px; 
+    align-items: center;
+    margin-top: 0; 
 }
 
 /*Grid css styling on home page*/
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
     border: 1px solid black;
-    margin-top: 150px;
-    margin-left: 300px;
-    margin-right: 300px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0;
 }
 .slogan {
     font-family: "Teko", sans-serif;
     font-size: 55px;
     font-weight: bold;
     text-align: center;
-    color: lightgray;
+    color: rgb(160, 160, 160);
     background-color: #1b1b1b;
     padding: 50px;
 }
@@ -83,11 +83,20 @@ header {
     font-family: "Teko", sans-serif;
     font-weight:normal;
     color: rgb(119, 119, 119);
+    background-color: rgb(235, 235, 235);
 }
 
 hr{
-    margin: 20px;
-    border: .2px solid lightgray;
+    margin: auto;
+    border: .2px solid darkgray;
+    width: 50%;
+}
+
+.top{
+    padding-bottom: 10px;
+}
+.bottom{
+    padding-top: 10px;
 }
 
 /*Footer styling*/
@@ -96,6 +105,7 @@ footer {
     padding: 20px;
     text-align: center;
     border-top: 5px dashed #1b1b1b;
+    margin-top: auto;
 }
 .social-media {
     margin: 10px 0;
