@@ -249,19 +249,20 @@ div h3{
 
 /* Style for the form container */
 .form-field {
-    border: 2px dashed black;
+    border: 2px dashed darkgray;
     margin: auto;
     display: flex; 
     padding: 20px;
     justify-content: space-evenly; 
     flex-wrap: wrap; 
+    margin-bottom: 20px;
 }
 
 .feedback-input {
     margin: 10px; 
     flex: 1; 
     min-width: 200px; 
-    border: 1px dashed black;
+    border: 2px dashed darkgray;
 }
 
 input[type="submit"] {
@@ -270,11 +271,14 @@ input[type="submit"] {
 
 .form-btn{
     width: 90%;
-    border: 2px dashed black;
+    border: 2px dashed darkgray;
     background-color: transparent;
     padding: 10px;
     box-shadow: 0 0 black;
     transition: transform 0.2s ease, color 0.2s, box-shadow 0.2s, border-radius 0.2s, border-color 0.2s, border 0.2s, background-color 0.2s;
+    color: darkgray;
+    font-weight: bolder;
+    margin: 20px;
 }
 
 .form-btn:hover{
@@ -290,12 +294,15 @@ input[type="submit"] {
 
 /* About grid*/
 
-.grid-container{
-    display: grid;
-    margin-left: 500px;
-    margin-top: 150px;
+
+.grid-container-about{
+    display: flex;
     justify-content: center;
+    margin-top: 130px;
+    gap: 50px;
 }
+
+
 .grid-item-1 {
     font-family: "Teko", sans-serif;
     border: 2px dashed darkgray;
@@ -312,9 +319,9 @@ input[type="submit"] {
 .grid-item-1:hover {
     /* transform: translate(-3px, -3px); */
     /* transform: scale(1.05); */
-    border: 2px solid blue;
-    background-color: blue;
-    color: blue;
+    border: 2px solid purple;
+    background-color: purple;
+    color: purple;
 }
 
 /* Original title */
@@ -329,9 +336,45 @@ input[type="submit"] {
     color: white;
 }
 
+.blog-grid{
 
+}
 
+/* Media Queries*/
 
+/* Media Queries for Specific Elements */
+
+/* Adjust styles for the grid-container on smaller screens */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        padding: 10px; /* Reduced padding for mobile */
+    }
+}
+
+/* Adjust styles for the grid-container on tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        padding: 20px; /* Adjusted padding */
+    }
+}
+
+/* Adjust styles for buttons on mobile devices */
+@media (max-width: 600px) {
+    .button {
+        font-size: small; /* Smaller button text for mobile */
+        padding: 5px 10px; /* Reduced padding */
+    }
+}
+
+/* Adjust styles for buttons on larger devices */
+@media (min-width: 901px) {
+    .button {
+        font-size: larger; /* Larger button text */
+        padding: 10px 15px; /* Increased padding */
+    }
+}
 
 
 
