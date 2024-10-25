@@ -238,3 +238,52 @@ li {
     color: green;
     cursor: pointer;
 }
+
+/* blog post form*/
+div h3{
+    padding: 20px;
+    font-family: "Teko", sans-serif;
+    text-align: center;
+    font-size: 3em;
+}
+
+/* Style for the form container */
+.form-field {
+    border: 2px dashed black;
+    margin: auto;
+    display: flex; 
+    padding: 20px;
+    justify-content: space-evenly; 
+    flex-wrap: wrap; 
+}
+
+.feedback-input {
+    margin: 10px; 
+    flex: 1; 
+    min-width: 200px; 
+    border: 1px dashed black;
+}
+
+input[type="submit"] {
+    flex: 0 1 auto; 
+}
+
+.form-btn{
+    width: 90%;
+    border: 2px dashed black;
+    background-color: transparent;
+    padding: 10px;
+    box-shadow: 0 0 black;
+    transition: transform 0.2s ease, color 0.2s, box-shadow 0.2s, border-radius 0.2s, border-color 0.2s, border 0.2s, background-color 0.2s;
+}
+
+.form-btn:hover{
+    transform: translate(-3px, -3px);
+    border-radius: 2px solid blue;
+    border-color: blue;
+    box-shadow: 2px 2px blue;
+    border: 2px solid blue;
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+}
