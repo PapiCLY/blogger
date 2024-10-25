@@ -87,7 +87,7 @@ app.post('edit/:index', (req,res)=>{
     }else{
         
         blogPosts[postIndex].bloggerName = req.body.bloggerName;
-        blodPosts[postIndex].postTitle = req.body.postTitle;
+        blogPosts[postIndex].postTitle = req.body.postTitle;
         blogPosts[postIndex].bloggerPost = req.body.blogPosts;
         blogPosts[postIndex].timeStamp = new Date().toLocaleString()
 
