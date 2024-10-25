@@ -2,16 +2,18 @@
 <h1>Edit Blog Post</h1>
 
 <!-- Form to edit the blog post -->
-<form action="/edit/<%= index %>" method="POST">
-    <label for="bloggerName">Blogger Name:</label>
-    <input type="text" id="bloggerName" name="bloggerName" value="<%= bloggerName %>" required><br><br>
+    <form action="/edit/<%= post.index %>" method="POST">
+        <label for="bloggerName">Blogger Name:</label>
+        <input type="text" id="bloggerName" name="bloggerName" value="<%= post.bloggerName %>" required><br><br>
+    
+        <label for="postTitle">Post Title:</label>
+        <input type="text" id="postTitle" name="postTitle" value="<%= post.postTitle %>" required><br><br>
+    
+        <label for="blogPost">Blog Post:</label>
+        <textarea id="blogPost" name="blogPost" required><%= post.bloggerPost %></textarea><br><br>
+    
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="/posts">Back to posts</a>
 
-    <label for="postTitle">Post Title:</label>
-    <input type="text" id="postTitle" name="postTitle" value="<%= postTitle %>" required><br><br>
-
-    <label for="blogPost">Blog Post:</label>
-    <textarea id="blogPost" name="blogPost" required><%= bloggerPost %></textarea><br><br>
-
-    <button type="submit">Save Changes</button>
-</form>
 <%- include('partials/footer.ejs') %>

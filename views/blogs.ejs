@@ -17,6 +17,7 @@
                     <li>Title: <%= post.postTitle %></li>
                     <li>Thoughts: <%= post.bloggerPost %></li>
                     <li><%= post.timeStamp %></li>
+                    <a href="/edit/<%= post.index %>"></a>
                 </ul>
                 <form action="/edit/<%= post.index %>" method="GET">
                     <!-- Hidden input to pass the index or ID of the post -->

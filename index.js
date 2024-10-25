@@ -18,6 +18,14 @@ app.get('/about', (req,res)=>{
 
 let blogPosts = [];
 
+app.get('/blogs', (req,res)=>{
+    res.render('blogs.ejs', {posts: blogPosts})
+})
+
+app.get('/posts', (req,res)=>{
+    res.render('blogs.ejs', { posts: blogPosts })
+})
+
 app.post('/submit', (req,res)=>{
     const now = new Date()
     const readableDateTime = now.toLocaleString();
@@ -30,13 +38,10 @@ app.post('/submit', (req,res)=>{
     }
 
     blogPosts.push(newPost)
+    res.redirect('/posts')
 
 
-    res.render('blogs.ejs', {posts:blogPosts})
-})
-
-app.get('/blogs', (req,res)=>{
-    res.render('blogs.ejs', {posts: blogPosts})
+    // res.render('blogs.ejs', {posts:blogPosts})
 })
 
 
@@ -50,37 +55,43 @@ app.post('/delete', (req,res)=>{
     res.render('blogs.ejs', {posts: blogPosts })
 })
 
+//render edit page
 app.get('/edit', (req,res)=>{
     res.render('edit.ejs')
 })
 
+app.get('/posts', (req,res)=>{
+    res.render('post.ejs')
+})
+
 //render post for specific form
 app.get('/edit/:index', (req,res)=>{
-    const postIndex = req.params.index;
-    const post = blogPosts[postIndex];
-    
-    if(post){
-        //render the edit form with the current post data
-        res.render('edit.ejs', { post, index: postIndex })
-    }else{
-        res.status(404).send('post not found')
+    const postIndex = parseInt(req.params.index);
+    if(isNaN(postIndex) || postIndex < 0 || postIndex >= blogPosts.length){
+        return res.status(404).send('Post not found')
     }
+
+    const post = blogPosts[postIndex];
+    res.render('edit.ejs', { post: post, index: postIndex })
+    
 });
 
 //post route to handle post editing
 app.post('edit/:index', (req,res)=>{
-    const postIndex = req.params.index;
+    const postIndex = parseInt(req.params.index);
 
     //check if post exists
-    if(postIndex >= 0 && postIndex < blogPosts.length){
+    if(isNaN(postIndex) || postIndex < 0 || postIndex >= blogPosts.length){
+
+        return res.status(404).send('Post not found')
+    }else{
+        
         blogPosts[postIndex].bloggerName = req.body.bloggerName;
         blodPosts[postIndex].postTitle = req.body.postTitle;
         blogPosts[postIndex].bloggerPost = req.body.blogPosts;
+        blogPosts[postIndex].timeStamp = new Date().toLocaleString()
 
-        //after edit is complete, re-render the blogs page where the updated post is
-        res.render('blogs.ejs', { posts: blogPosts })
-    }else{
-        res.status(404).send('Posts not found')
+        res.redirect('/posts')
     }
 })
 
