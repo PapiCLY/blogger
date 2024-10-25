@@ -289,24 +289,32 @@ input[type="submit"] {
 }
 
 /* About grid*/
-/* About grid */
+
+.grid-container{
+    display: grid;
+    margin-left: 500px;
+    margin-top: 150px;
+    justify-content: center;
+}
 .grid-item-1 {
     font-family: "Teko", sans-serif;
-    border: 2px dashed #1b1b1b;
+    border: 2px dashed darkgray;
     padding: 20px;
     align-items: center; 
     line-height: 30px;
     height: 250px; 
     overflow: hidden;
     position: relative; 
+    color: darkgray;
     transition: transform 0.2s ease, color 0.2s, box-shadow 0.2s, border 0.2s, background-color 0.2s;
 }
 
 .grid-item-1:hover {
-    transform: translate(-3px, -3px);
-    transform: scale(1.05);
-    border: 2px solid black;
-    background-color: black;
+    /* transform: translate(-3px, -3px); */
+    /* transform: scale(1.05); */
+    border: 2px solid blue;
+    background-color: blue;
+    color: blue;
 }
 
 /* Original title */
