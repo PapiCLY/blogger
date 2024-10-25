@@ -336,9 +336,7 @@ input[type="submit"] {
     color: white;
 }
 
-.blog-grid{
 
-}
 
 /* Media Queries*/
 
@@ -367,6 +365,24 @@ input[type="submit"] {
     .overview {
         padding: 40px; 
         font-size: 20px; 
+    }
+    .grid-container-about {
+        flex-direction: column;   /* Stack items vertically */
+        margin-top: 50px;         /* Reduce top margin for smaller screens */
+        gap: 20px;                /* Reduce gap between items */
+        align-items: center;      /* Center-align the items */
+    }
+    
+    .grid-item-1 {
+        width: 90%;               /* Set a responsive width */
+        padding: 15px;            /* Adjust padding to fit smaller screens */
+        height: auto;             /* Allow height to adjust based on content */
+        font-size: 1em;           /* Scale font size for readability */
+    }
+
+    .hover-title, .new-hover-title {
+        font-size: 1.5em;         /* Adjust font size for smaller screens */
+        text-align: center;
     }
 }
 
