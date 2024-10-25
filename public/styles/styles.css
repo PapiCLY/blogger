@@ -346,9 +346,27 @@ input[type="submit"] {
 
 /* Adjust styles for the grid-container on smaller screens */
 @media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 column for mobile */
-        padding: 10px; /* Reduced padding for mobile */
+    header {
+        flex-direction: column;
+        padding: 20px 20px; 
+        text-align: center;
+    }
+    .button {
+        padding: 15px 30px;   
+        font-size: 1.2em;      
+    }
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .slogan {
+        font-size: 35px; 
+        padding: 30px;    
+    }
+
+    .overview {
+        padding: 40px; 
+        font-size: 20px; 
     }
 }
 
